@@ -13,6 +13,7 @@ app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 app.use(express.static("public"));
 app.use(router);
+app.use(express.urlencoded({ limit: "10mb", extended: false }));
 
 mongoose
   .connect(process.env.DB_URI, {
